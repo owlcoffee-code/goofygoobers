@@ -1,166 +1,207 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Goofy Goobers</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    <head>
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="/apple-touch-icon.png"
+        >
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="/favicon-32x32.png"
+        >
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="/favicon-16x16.png"
+        >
+        <link rel="manifest" href="/site.webmanifest">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Goofy Goobers</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
 
-        .container {
-            padding: 1rem;
-        }
+            .container {
+                padding: 1rem;
+            }
 
-        .table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 1.5rem;
-        }
+            .table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-bottom: 1.5rem;
+            }
 
-        .table th, .table td {
-            border: 1px solid #ddd;
-            padding: 0.75rem;
-            text-align: center;
-        }
+            .table th, .table td {
+                border: 1px solid #ddd;
+                padding: 0.75rem;
+                text-align: center;
+            }
 
-        .table th {
-            background-color: #f4f4f4;
-        }
+            .table th {
+                background-color: #f4f4f4;
+            }
 
-        .player-card {
-            border: 1px solid #ddd;
-            margin-bottom: 1rem;
-            border-radius: 5px;
-            overflow: hidden;
-        }
+            .player-card {
+                border: 1px solid #ddd;
+                margin-bottom: 1rem;
+                border-radius: 5px;
+                overflow: hidden;
+            }
 
-        .player-header {
-            background-color: #f4f4f4;
-            padding: 0.75rem;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-        }
+            .player-header {
+                background-color: #f4f4f4;
+                padding: 0.75rem;
+                cursor: pointer;
+                display: flex;
+                justify-content: space-between;
+            }
 
-        .player-content {
-            display: none;
-            padding: 0.75rem;
-        }
-
-        @media (min-width: 768px) {
             .player-content {
+                display: none;
+                padding: 0.75rem;
+            }
+
+            .header-images {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+            }
+
+            @media (min-width: 768px) {
+                .player-content {
+                    display: block;
+                }
+            }
+
+            .toggle-icon {
+                font-size: 1.25rem;
+            }
+
+            .visible .player-content {
                 display: block;
             }
-        }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="header-images">
+                <img
+                    src="./assets/goofygoober1.png"
+                    width="150"
+                    height="150"
+                    alt="an image of sponge-bob and patrick cartoon"
+                >
+                <img
+                    src="./assets/goofygoober2.png"
+                    width="150"
+                    alt="the character sponge-bob hanging from the ceiling"
+                >
+            </div>
+            <h1>Goofy Goobers F.C</h1>
 
-        .toggle-icon {
-            font-size: 1.25rem;
-        }
-
-        .visible .player-content {
-            display: block;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <img src="./assets/goofygoober1.png" width="150" alt="an image of sponge-bob and patrick cartoon">
-        <img src="./assets/goofygoober2.png" width="150" alt="the character sponge-bob hanging from the ceiling">
-        <h1>Goofy Goobers F.C</h1>
-
-                <!-- Player Cards -->
-                <div class="player-card" id="player-1">
-                    <div class="player-header">
-                        <span>Andre</span>
-                        <span class="toggle-icon">+</span>
-                    </div>
-                    <div class="player-content">
-                        <p>Total Goals: 2</p>
-                        <p>Penalty Goals: 1</p>
-                    </div>
+            <!-- Player Cards -->
+            <div class="player-card" id="player-1">
+                <div class="player-header">
+                    <span>Andre</span>
+                    <span class="toggle-icon">+</span>
                 </div>
-                <div class="player-card" id="player-1">
-                    <div class="player-header">
-                        <span>Simon</span>
-                        <span class="toggle-icon">+</span>
-                    </div>
-                    <div class="player-content">
-                        <p>Total Goals: 1</p>
-                        <p>Penalty Goals: 0</p>
-                    </div>
+                <div class="player-content">
+                    <p>Total Goals: 2</p>
+                    <p>Penalty Goals: 1</p>
                 </div>
-                <div class="player-card" id="player-1">
-                    <div class="player-header">
-                        <span>Rafa Paredes</span>
-                        <span class="toggle-icon">+</span>
-                    </div>
-                    <div class="player-content">
-                        <p>Total Goals: 1</p>
-                        <p>Penalty Goals: 0</p>
-                    </div>
+            </div>
+            <div class="player-card" id="player-1">
+                <div class="player-header">
+                    <span>Simon</span>
+                    <span class="toggle-icon">+</span>
                 </div>
-                <div class="player-card" id="player-1">
-                    <div class="player-header">
-                        <span>Paredes Senior</span>
-                        <span class="toggle-icon">+</span>
-                    </div>
-                    <div class="player-content">
-                        <p>Total Goals: 1</p>
-                        <p>Penalty Goals: 0</p>
-                    </div>
+                <div class="player-content">
+                    <p>Total Goals: 1</p>
+                    <p>Penalty Goals: 0</p>
                 </div>
-        <!-- Match Day Goals Table -->
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>Season 1</th>
-                    <th>Goals</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td> match 1, 2025-01-01</td>
-                    <td>Andre 2 goals, Paredes Senior 1 goal, Simon 1 goal, Rafa P 1 goal</td>
-                </tr>
-                <tr>
-                    <td> match 2, 2025-01-05</td>
-                    <td>upcoming match</td>
-                </tr>
-                <tr>
-                    <td> match 3, 2025-01-12</td>
-                    <td>upcoming match</td>
-                </tr>
-            </tbody>
-        </table>
+            </div>
+            <div class="player-card" id="player-1">
+                <div class="player-header">
+                    <span>Rafa Paredes</span>
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="player-content">
+                    <p>Total Goals: 1</p>
+                    <p>Penalty Goals: 0</p>
+                </div>
+            </div>
+            <div class="player-card" id="player-1">
+                <div class="player-header">
+                    <span>Paredes Senior</span>
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="player-content">
+                    <p>Total Goals: 1</p>
+                    <p>Penalty Goals: 0</p>
+                </div>
+            </div>
+            <!-- Match Day Goals Table -->
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Season 1</th>
+                        <th>Goals</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>match 1, 2025-01-01</td>
+                        <td>
+                            Andre 2 goals, Paredes Senior 1 goal, Simon 1 goal,
+                            Rafa P 1 goal
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>match 2, 2025-01-05</td>
+                        <td>upcoming match</td>
+                    </tr>
+                    <tr>
+                        <td>match 3, 2025-01-12</td>
+                        <td>upcoming match</td>
+                    </tr>
+                </tbody>
+            </table>
 
-        <h1>Meadow D'Or Winner</h1>
-        <p>to be contested</p>
-        <img src="./assets/meadowdor.webp" width="300"  alt="image of the ballon d'or">
+            <h1>Meadow D'Or Winner</h1>
+            <p>to be contested</p>
+            <img
+                src="./assets/meadowdor.webp"
+                width="300"
+                alt="image of the ballon d'or"
+            >
+        </div>
 
-    </div>
+        <script>
+            document.querySelectorAll(".player-header").forEach((header) => {
+                header.addEventListener("click", () => {
+                    const card = header.parentElement;
+                    const content = card.querySelector(".player-content");
+                    const icon = header.querySelector(".toggle-icon");
+                    const isVisible = content.style.display === "block";
 
-    <script>
-        document.querySelectorAll('.player-header').forEach(header => {
-            header.addEventListener('click', () => {
-                const card = header.parentElement;
-                const content = card.querySelector('.player-content');
-                const icon = header.querySelector('.toggle-icon');
-                const isVisible = content.style.display === 'block';
-
-                if (isVisible) {
-                    content.style.display = 'none';
-                    icon.textContent = '+';
-                } else {
-                    content.style.display = 'block';
-                    icon.textContent = '-';
-                }
+                    if (isVisible) {
+                        content.style.display = "none";
+                        icon.textContent = "+";
+                    } else {
+                        content.style.display = "block";
+                        icon.textContent = "-";
+                    }
+                });
             });
-        });
-    </script>
-</body>
+        </script>
+    </body>
 </html>
